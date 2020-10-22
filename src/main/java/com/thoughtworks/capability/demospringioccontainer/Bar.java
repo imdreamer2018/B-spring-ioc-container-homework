@@ -1,5 +1,6 @@
 package com.thoughtworks.capability.demospringioccontainer;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Component;
 
@@ -8,8 +9,12 @@ public class Bar {
 
     private Foo foo;
 
-    public Bar(@Lazy Foo foo) {
+    @Autowired
+    public void setFoo(Foo foo) {
         this.foo = foo;
+    }
+    public Foo getFoo() {
+        return foo;
     }
 
     public void hi() {
