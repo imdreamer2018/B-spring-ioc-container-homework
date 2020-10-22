@@ -1,0 +1,2 @@
+从ApplicationContext里面获取GreetingService，这样每次都从上下文中请求一个实例，容器对每个请求都实例化一个新的Service。
+
