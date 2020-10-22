@@ -1,2 +1,3 @@
-从ApplicationContext里面获取GreetingService，这样每次都从上下文中请求一个实例，容器对每个请求都实例化一个新的Service。
+在@Scope里面加上代理模式即可，这样，就可以每次获取不同的Service了，这个的原理就是，在初始化Controller的时候并不是讲一个Service的实体注入，而是注入一个代理，当真正调用Service的时候，代理会对其进行依赖解析，并调用真正的实体bean。
 
+proxyMode = ScopedProxyMode.TARGET_CLASS表示注入的是class的实现

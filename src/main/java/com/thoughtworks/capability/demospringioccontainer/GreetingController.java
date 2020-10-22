@@ -8,16 +8,16 @@ import org.springframework.web.context.WebApplicationContext;
 @RestController
 public class GreetingController {
 
-    private final WebApplicationContext applicationContext;
+    private final GreetingService greetingService;
 
     @Autowired
-    public GreetingController( WebApplicationContext applicationContext) {
-        this.applicationContext = applicationContext;
+    public GreetingController(GreetingService greetingService) {
+        this.greetingService = greetingService;
     }
 
     @GetMapping("/greet")
     public String greet() {
-        return this.applicationContext.getBean(GreetingService.class).sayHi();
+        return greetingService.sayHi();
     }
 
 }
