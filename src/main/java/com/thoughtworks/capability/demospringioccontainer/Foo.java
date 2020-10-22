@@ -8,13 +8,8 @@ public class Foo {
 
     private Bar bar;
 
-    @Autowired
-    public void setBar(Bar bar) {
+    void setBar(Bar bar) {
         this.bar = bar;
-    }
-
-    public Bar getBar() {
-        return bar;
     }
 
     public void hi() {
